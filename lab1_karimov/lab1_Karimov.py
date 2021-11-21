@@ -1,5 +1,5 @@
 from random import randint, uniform
-
+from pprint import pprint
 
 k = 4
 
@@ -9,13 +9,6 @@ def array_print(array):
     Вывод в консоль значений одномерного массива
     """
     print(' '.join([str(i) for i in array]))
-
-
-def matrix_array_print(array):
-    for i in array:
-        print()
-        for j in i:
-            print(j, end=' ')
 
 
 def d(x: float):
@@ -58,10 +51,11 @@ def test_freq_and_pairs(arr):
         pairs_arr = [(e_arr[i], e_arr[i + 1]) for i in range(0, len(e_arr) - 1, 2)]
 
         # Создание матрицы 10 на 10 с подсчётом числа повторений
-        matrix_array = [[0 for j in range(10)] for i in range(10)]
+        matrix_array = [[0 for _ in range(10)] for _ in range(10)]
         for e in pairs_arr:
             matrix_array[e[0]][e[1]] += 1
-        matrix_array_print(matrix_array)
+        pprint(matrix_array)
+
     else:
         return -1
 
